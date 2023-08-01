@@ -2,7 +2,6 @@
 import {IndicatorsPanel} from '@component-adaptor';
 import { Progress } from '@component-adaptor';
 
-
 function IndicatorsPanelWithProcessView({value:{order, process,preOrder,todayOrder=0}, title,tooltip,}:{value:{order:number, process: number,preOrder:number,todayOrder?:number},title:string, tooltip?:string}){
     return (
         <IndicatorsPanel title="To Assign" 

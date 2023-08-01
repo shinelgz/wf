@@ -120,7 +120,7 @@
   }
   .ssc-progress {
     display: flex;
-    flex-direction: row-reverse;
+    _flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
   }
