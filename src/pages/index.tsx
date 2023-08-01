@@ -16,7 +16,7 @@ function Home() {
   
   return (
   <div style={{ minWidth: platform == PlatForm.PC ? "1000px" : 'auto'}} className="delivery-dashboard-wrapper">
-    <div className="overall-wrapper">
+    <div className="container-wrapper">
       <LegendTitleView title='Overal'/>
       <CardContainer>
         <IndicatorsPanelView title="Total Inbounded" />
@@ -25,7 +25,7 @@ function Home() {
         <IndicatorsPanelView title="To Inbound" />
       </CardContainer>
    </div>
-   <div className="overall-wrapper">
+   <div className="container-wrapper">
       <LegendTitleView title='Delivery Progress'/>
       <CardContainer>
         <IndicatorsPanelWithProcessView title="To Assign" value={{order:85, process: 93, preOrder: 56,todayOrder: 53}}/>
