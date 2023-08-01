@@ -23,6 +23,7 @@
     "baseUrl": ".",
     "paths": {
       "@component-adaptor": ["src/components/adaptor"],
+      "~antd-mobile": ["node_modules/antd-mobile"]
     }
   },
   "include": ["src"],

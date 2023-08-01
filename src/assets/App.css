@@ -1,0 +1,127 @@
+#root {
+  margin: 0 auto;
+  font-family: Roboto,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Oxygen,Ubuntu,Cantarell,Droid Sans,Helvetica Neue,BilnkMacSystemFont,Helvetica,Arial,sans-serif;
+}
+.delivery-dashboard-wrapper {
+  padding: 0 24px 16px;
+  min-height: 100%;
+  height: 100%;
+  ::v-deep {
+    .ssc-tabs {
+      height: 100%;
+
+      .ssc-tabs-content {
+        .ssc-tabs-pane {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}
+
+.overall-wrapper {
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 0 12px;
+  margin: 12px 0;
+
+  .overall-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    row-gap: 16px;
+
+    .indicator-with-link {
+      ::v-deep {
+        .footer-indicator-flexstart {
+          position: relative;
+          display: flex;
+          justify-content: start;
+          line-height: 16px;
+          color: #959BA4;
+
+          > span {
+            &.footer-indicator-value {
+              padding-right: 15px;
+            }
+
+            &:last-child {
+               _position: absolute;
+               _right: 0;
+              font-weight: 500;
+              cursor: pointer;
+
+              .jump-link {
+                margin-left: 5px;
+                color: #959BA4;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .basic-indicators-panel {
+      _width: calc(33.3% - 16.7px);
+    }
+
+    .indicator-with-ring {
+      _width: calc(33.3% - 16.7px);
+    }
+  }
+}
+
+
+
+
+
+
+.basic-indicators-panel{
+  .day-content .prev-day .emphasized, 
+  .day-content .today .emphasized {
+    font-weight: 500;
+    color: #303844;
+  }
+
+  .day-content .prev-day, 
+  .day-content .today {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .divider{
+    width: 100%;
+    height: 0;
+    margin: 16px 0 0 0;
+    border: 1px dashed #e2e6ec;
+    background: none;
+  }
+  .progress-title{
+    line-height: 16px;
+    margin-bottom: 8px;
+  }
+  .progress-content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 500;
+    color: #303844;
+  }
+  .progress-text {
+    font-size: 22px;
+    font-weight: 500;
+    color: #303844;
+    margin-right: 16px;
+    display: flex;
+    line-height: 24px;
+    align-items: baseline;
+  }
+  .ssc-progress {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

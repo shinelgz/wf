@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import './index.css'
-import PlatFormContext from './Context'
+import './assets/index.css'
+import './assets/index.h5.less'
+import PlatFormContext from './utils/Context'
 
 console.info('h5');
 ReactDOM.createRoot(document.getElementById('root')!).render(

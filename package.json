@@ -13,12 +13,17 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
+    "@ssc-ui-icons/icons-react": "^1.1.3",
     "antd": "^5.7.3",
     "antd-mobile": "^5.32.0",
     "antd-mobile-icons": "^0.3.0",
+    "axios": "^1.4.0",
     "dayjs": "^1.11.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-pro-components": "^1.1.27",
+    "ssc-mobile-ui-react": "0.0.4-alpha.12",
+    "ssc-ui-react": "^1.1.32",
     "vite-plugin-html": "^3.2.0"
   },
   "devDependencies": {
@@ -31,6 +36,7 @@
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "less": "^4.1.3",
     "rollup-plugin-visualizer": "^5.9.2",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
