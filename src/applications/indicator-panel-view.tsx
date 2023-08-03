@@ -1,4 +1,4 @@
-import {IndicatorsPanel} from '@component-adaptor';
+import {IndicatorsPanel} from '@adaption-adaptor';
 
 
 function IndicatorsPanelView({title}:{title:string}){

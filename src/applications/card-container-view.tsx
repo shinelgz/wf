@@ -1,3 +1,3 @@
-import { CardContainer } from "@component-adaptor";
+import { CardContainer } from "@adaption-adaptor";
 
 export default CardContainer;

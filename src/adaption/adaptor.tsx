@@ -10,6 +10,10 @@ export * from './pc'
 import {baseui} from './pc';
 
 const { Progress } = baseui;
+const NavBar = (options: Record<string, any>) => {
+  console.info(options);
+  return  '';
+};
 
 console.info('pc component adaptor');
 
@@ -19,5 +23,6 @@ export  {
     Stepper,
     TextArea,
     LegendTitle,IndicatorsPanel,
-    Progress, CardContainer
+    Progress, CardContainer,
+    NavBar
   }

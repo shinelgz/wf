@@ -17,9 +17,10 @@ function  Search({onSearch}:{onSearch : () => void}) {
       <Form
         form={form}
         layout='horizontal'
+        style={{borderTop: 0}}
         footer={
           <>
-          <Button block type='submit' color='primary' size='large' style={{marginBottom: "10px"}}
+          <Button block type='submit' color='primary' size='large' style={{marginBottom: "10px", marginTop: "10px"}}
           onClick={onSearch}
           >
             Search

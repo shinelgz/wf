@@ -8,8 +8,8 @@ import {visualizer} from 'rollup-plugin-visualizer';
 /**
  * 常量定义
  */
-const h5Component = 'src/components/adaptor.h5';
-const pcComponent = 'src/components/adaptor';
+const h5Component = 'src/adaption/adaptor.h5';
+const pcComponent = 'src/adaption/adaptor';
 const h5EntryJS = 'src/main-h5.tsx';
 const pcEntryJS = 'src/main-pc.tsx';
 const h5Entry = 'index.h5.html';
@@ -46,7 +46,7 @@ export default (opt: unknown) => {
   return {
     resolve: {
       alias: {
-          '@component-adaptor': path.resolve(__dirname, component),
+          '@adaption-adaptor': path.resolve(__dirname, component),
           '~antd-mobile': path.resolve(__dirname,'node_modules/antd-mobile')
       }
     },

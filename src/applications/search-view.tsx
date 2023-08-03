@@ -1,9 +1,9 @@
 
-import {Search} from '@component-adaptor';
+import {Search} from '@adaption-adaptor';
 
 function SearchView(){
   return (<>
-  <Search onSearch={() => {alert(1)}}>
+  <Search onSearch={() => {}}>
   </Search>
   </>);
 }

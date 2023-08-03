@@ -5,7 +5,8 @@ import LegendTitleView from '../applications/legend-title-view';
 import IndicatorsPanelView  from '../applications/indicator-panel-view';
 import IndicatorsPanelWithProcessView from '../applications/indicator-panel-with-process-view';
 import CardContainer from '../applications/card-container-view';
-
+import NavBarView from '../applications/navbar-view';
+import SearchView from '../applications/search-view'
 function Home() {
 
   const {platform} = useContext(PlatFormContext)
@@ -16,6 +17,10 @@ function Home() {
   
   return (
   <div style={{ minWidth: platform == PlatForm.PC ? "1000px" : 'auto'}} className="delivery-dashboard-wrapper">
+    <NavBarView>Operation</NavBarView>
+    <div className="container-wrapper">
+      <SearchView />
+    </div>
     <div className="container-wrapper">
       <LegendTitleView title='Overal'/>
       <CardContainer>
