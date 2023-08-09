@@ -36,7 +36,10 @@ const pcComponent = 'src/adaption/adaptor-pc';
  */
 const transformJSEntry = (mode: RunMode, code: string)  => {
   let path = getEntryJs(mode);
-  return code.replace(/\$___MAIN_JS_ENTRY__/g, `<script type="module" src="${path}"></script>`);
+  return code
+  .replace(/\$___MAIN_JS_ENTRY__/g, `<script type="module" src="${path}"></script>`)
+  .replace(/\$__PRO_RUN_MODE__/g, mode)
+  
 }
 
 export default (opt: unknown):UserConfig => {
@@ -103,10 +106,15 @@ export default (opt: unknown):UserConfig => {
           math: 'always'
         }
       }
+    },
+    server:{
+      // 多模式同时运行化，固定端口
+      port: mode === RunMode.h5 ? 5174 : 5173
     }
+    
   }
 
-  console.info('vite-config', config);
+  // console.info('vite-config', config);       
 
   return config;
 }
