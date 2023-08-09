@@ -1,43 +1,38 @@
 import { useContext } from 'react';
 import PlatFormContext from '../utils/Context';
 import { PlatForm } from '../utils/const';
-import LegendTitleView from '../applications/legend-title-view';
 import IndicatorsPanelView  from '../applications/indicator-panel-view';
 import IndicatorsPanelWithProcessView from '../applications/indicator-panel-with-process-view';
-import CardContainer from '../applications/card-container-view';
 import NavBarView from '../applications/navbar-view';
-import SearchView from '../applications/search-view'
+import SearchView from '../applications/search-view';
+import { CardContainerView}  from '../applications/card-container-view';
+import  {viewMoreHandler} from '../applications'
+import { useNavigate } from 'react-router-dom';
 export default function Home() {
 
   const {platform} = useContext(PlatFormContext)
-
+  const navigate = useNavigate();
  
-  console.info(platform);
+  console.info(platform,viewMoreHandler);
 
   
   return (
   <div style={{ minWidth: platform == PlatForm.PC ? "1000px" : 'auto'}} className="delivery-dashboard-wrapper">
-    <NavBarView>Operation</NavBarView>
+    <NavBarView navBarProps={{backArrow:false}}>Operation</NavBarView>
     <div className="container-wrapper">
       <SearchView />
     </div>
-    <div className="container-wrapper">
-      <LegendTitleView title='Overal'/>
-      <CardContainer>
+    <CardContainerView title='Overall' more={{position:'top', onclick: () => {viewMoreHandler(navigate)}}}>
         <IndicatorsPanelView title="Total Inbounded" />
         <IndicatorsPanelView title="Total Delivered" />
         <IndicatorsPanelView title="Total On-hand" />
         <IndicatorsPanelView title="To Inbound" />
-      </CardContainer>
-   </div>
-   <div className="container-wrapper">
-      <LegendTitleView title='Delivery Progress'/>
-      <CardContainer>
+   </CardContainerView>
+      <CardContainerView title='Delivery Progress' more={{position:'bottom', text: "view more info", onclick: () => {alert(1)}}}>
         <IndicatorsPanelWithProcessView title="To Assign" value={{order:85, process: 93, preOrder: 56,todayOrder: 53}}/>
         <IndicatorsPanelWithProcessView title="To Handover" value={{order:55, process: 97, preOrder: 56,todayOrder: 3}} tooltip="Parcels waiting to be handed over" />
         <IndicatorsPanelWithProcessView title="To Deliver" value={{order:125, process: 100, preOrder: 56,todayOrder: 213}}/>
-      </CardContainer>
-   </div>
+    </CardContainerView>
   </div>
   )
 }

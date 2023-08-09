@@ -15,6 +15,7 @@ export enum RunMode {
 export function getAdaptionList(mode: RunMode){
   return {
       '@adaption-adaptor' : resolvePath( componentAdaption +  mode),
+      '@adaption-handlers': resolvePath( componentAdaption +  mode)
   }
 }
 
@@ -55,7 +56,8 @@ export default (opt: unknown):UserConfig => {
     resolve: {
       alias: {
            ...getAdaptionList(mode),
-          '@adaption-adaptor': path.resolve(__dirname, component),
+         // '@adaption-adaptor': path.resolve(__dirname, component),
+         // '@adaption-handlers': path.resolve(__dirname, component),
           '~antd-mobile': path.resolve(__dirname,'node_modules/antd-mobile')
       }
     },
