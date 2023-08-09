@@ -7,7 +7,7 @@ import IndicatorsPanelWithProcessView from '../applications/indicator-panel-with
 import CardContainer from '../applications/card-container-view';
 import NavBarView from '../applications/navbar-view';
 import SearchView from '../applications/search-view'
-function Home() {
+export default function Home() {
 
   const {platform} = useContext(PlatFormContext)
 
@@ -41,8 +41,6 @@ function Home() {
   </div>
   )
 }
-
-export default Home;
 
 
 /**

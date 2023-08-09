@@ -1,14 +1,15 @@
 
 import './assets/App.css'
-import Home from './pages/index';
 import '/node_modules/ssc-ui-react/dist/ssc-ui-react.css'
+import {useRoutes, BrowserRouter} from 'react-router-dom';
+import {routes} from './routes'
+
 function App() {
+  const Eles = () => useRoutes(routes);
   return (
-    <>
-      <div >
-      <Home />
-      </div>
-    </>
+    <BrowserRouter>
+        <Eles />
+    </BrowserRouter>
   )
 }
 

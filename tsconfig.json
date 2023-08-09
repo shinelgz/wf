@@ -22,8 +22,8 @@
     "types": ["vite/client"],
     "baseUrl": ".",
     "paths": {
-      "@adaption-adaptor": ["src/adaption/adaptor"],
-      "~antd-mobile": ["node_modules/antd-mobile"]
+      "@adaption-adaptor": ["src/adaption/adaptor-pc"],
+      "~antd-mobile": ["node_modules/antd-mobile"],
     }
   },
   "include": ["src"],

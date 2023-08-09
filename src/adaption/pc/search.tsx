@@ -1,11 +1,12 @@
 import  { useState } from 'react';
 import { DownOutlined } from '@ant-design/icons';
 import { Button, Input,Col, Form, DatePicker,Switch, Row, Space, theme } from 'antd';
+import type { SearchProps } from '../type';
 
 const  {TextArea} = Input;
 
 
-const AdvancedSearchForm = ({onSearch}:{onSearch : () => void}) => {
+const AdvancedSearchForm = ({onSearch}:SearchProps) => {
   const { token } = theme.useToken();
   const [form] = Form.useForm();
   const [expand, setExpand] = useState(false);

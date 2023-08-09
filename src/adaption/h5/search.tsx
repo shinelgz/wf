@@ -9,8 +9,9 @@ import {
   Switch,
 } from 'antd-mobile'
 import dayjs from 'dayjs'
+import type { SearchProps } from '../type';
 
-function  Search({onSearch}:{onSearch : () => void}) {
+function  Search({onSearch}:SearchProps) {
   const [form] = Form.useForm();
   return (
     <>

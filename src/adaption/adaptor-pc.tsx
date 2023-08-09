@@ -12,7 +12,7 @@ import {baseui} from './pc';
 const { Progress } = baseui;
 const NavBar = (options: Record<string, any>) => {
   console.info(options);
-  return  '';
+  return  <></>;
 };
 
 console.info('pc component adaptor');

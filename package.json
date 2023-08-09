@@ -22,6 +22,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-pro-components": "^1.1.27",
+    "react-router-dom": "^6.14.2",
     "ssc-mobile-ui-react": "0.0.4-alpha.12",
     "ssc-ui-react": "^1.1.32",
     "vite-plugin-html": "^3.2.0"
