@@ -47,8 +47,8 @@ export default (opt: unknown):UserConfig => {
   console.info(opt);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { mode } = opt as { mode : RunMode};
-  const isH5 = mode === 'h5';
-  const component = isH5 ? h5Component : pcComponent;
+  // const isH5 = mode === 'h5';
+  // const component = isH5 ? h5Component : pcComponent;
 
   console.info(mode, {...getAdaptionList(mode)});
 
