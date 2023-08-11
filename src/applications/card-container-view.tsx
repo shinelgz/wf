@@ -2,7 +2,7 @@ import {LegendTitle,Container, moreProps} from '@adaption-adaptor';
 
 interface props {
     title? : string, 
-    children: React.ReactNode[],
+    children: React.ReactNode | React.ReactNode[],
     more?: moreProps
 }
 export function CardContainerView({title, more, children}: props){

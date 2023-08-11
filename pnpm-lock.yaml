@@ -7,6 +7,9 @@ dependencies:
   '@ssc-ui-icons/icons-react':
     specifier: ^1.1.3
     version: 1.1.3(react-dom@18.2.0)(react@18.2.0)
+  '@ssc-ui/charts-react':
+    specifier: 2.0.0-alpha.17
+    version: 2.0.0-alpha.17(@ssc-ui-icons/icons-react@1.1.3)(echarts@5.4.3)(react-dom@18.2.0)(react@18.2.0)(ssc-ui-react@1.1.32)
   antd:
     specifier: ^5.7.3
     version: 5.7.3(react-dom@18.2.0)(react@18.2.0)
@@ -22,6 +25,12 @@ dependencies:
   dayjs:
     specifier: ^1.11.9
     version: 1.11.9
+  echarts:
+    specifier: ^5.4.2
+    version: 5.4.3
+  echarts-for-react:
+    specifier: ^3.0.2
+    version: 3.0.2(echarts@5.4.3)(react@18.2.0)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -695,6 +704,10 @@ packages:
       picomatch: 2.3.1
     dev: false
 
+  /@shopee_common/currency@4.0.2:
+    resolution: {integrity: sha512-sYa6cKMAEEeLi/fdGxuQEt75qfBKnTXLs0CNJmBJaVZ8Fr7H9Yof2wknbyP6+crHHkYi72lRo+yLhLZcKuENGw==}
+    dev: false
+
   /@ssc-ui-icons/icons-react@1.1.3(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-eQNgH4wQ8rhdPur3guN+jbGK942znzFgS0rmMU6sCHaQ53VsWpxZtNcHX7cty2r7/Jcy8A7HPgzsg77kGAMDLg==}
     peerDependencies:
@@ -703,6 +716,26 @@ packages:
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@ssc-ui/charts-react@2.0.0-alpha.17(@ssc-ui-icons/icons-react@1.1.3)(echarts@5.4.3)(react-dom@18.2.0)(react@18.2.0)(ssc-ui-react@1.1.32):
+    resolution: {integrity: sha512-3r5tdLO0yNbHrobh8qN484LMjgiauaJklwvO4cOt91gKnLH+7/wQVS8OLLeakqiS6Vhp4C9iCEijlkh/AcfOBQ==}
+    peerDependencies:
+      '@ssc-ui-icons/icons-react': ~1.1
+      echarts: ^5.0.0
+      react: ^16.0.0 || ^17.0.0
+      react-dom: ^16.0.0 || ^17.0.0
+      ssc-ui-react: ~1.1
+    dependencies:
+      '@shopee_common/currency': 4.0.2
+      '@ssc-ui-icons/icons-react': 1.1.3(react-dom@18.2.0)(react@18.2.0)
+      classnames: 2.3.2
+      echarts: 5.4.3
+      lodash-es: 4.17.21
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-resizable: 3.0.5(react-dom@18.2.0)(react@18.2.0)
+      ssc-ui-react: 1.1.32(axios@1.4.0)(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
   /@swc/core-darwin-arm64@1.3.72:
@@ -1272,6 +1305,11 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
+  /clsx@1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+    dev: false
+
   /color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
     engines: {node: '>=7.0.0'}
@@ -1463,6 +1501,25 @@ packages:
   /dotenv@16.3.1:
     resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
     engines: {node: '>=12'}
+    dev: false
+
+  /echarts-for-react@3.0.2(echarts@5.4.3)(react@18.2.0):
+    resolution: {integrity: sha512-DRwIiTzx8JfwPOVgGttDytBqdp5VzCSyMRIxubgU/g2n9y3VLUmF2FK7Icmg/sNVkv4+rktmrLN9w22U2yy3fA==}
+    peerDependencies:
+      echarts: ^3.0.0 || ^4.0.0 || ^5.0.0
+      react: ^15.0.0 || >=16.0.0
+    dependencies:
+      echarts: 5.4.3
+      fast-deep-equal: 3.1.3
+      react: 18.2.0
+      size-sensor: 1.0.1
+    dev: false
+
+  /echarts@5.4.3:
+    resolution: {integrity: sha512-mYKxLxhzy6zyTi/FaEbJMOZU1ULGEQHaeIeuMR5L+JnJTpz+YR03mnnpBhbR4+UYJAgiXgpyTVLffPAjOTLkZA==}
+    dependencies:
+      tslib: 2.3.0
+      zrender: 5.4.4
     dev: false
 
   /ejs@3.1.9:
@@ -2024,6 +2081,10 @@ packages:
     dependencies:
       p-locate: 5.0.0
     dev: true
+
+  /lodash-es@4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
 
   /lodash.clonedeep@4.5.0:
     resolution: {integrity: sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=}
@@ -3088,6 +3149,18 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-draggable@4.4.5(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-OMHzJdyJbYTZo4uQE393fHcqqPYsEtkjfMgvCHr6rejT+Ezn4OZbNyGH50vv+SunC1RMvwOTSWkEODQLzw1M9g==}
+    peerDependencies:
+      react: '>= 16.3.0'
+      react-dom: '>= 16.3.0'
+    dependencies:
+      clsx: 1.2.1
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
     dev: false
@@ -3133,6 +3206,18 @@ packages:
       react-sortable-hoc: 2.0.0(react-dom@18.2.0)(react@18.2.0)
       spark-md5: 3.0.2
       ssc-ui-react: 1.1.32(axios@1.4.0)(react-dom@18.2.0)(react@18.2.0)
+    dev: false
+
+  /react-resizable@3.0.5(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-vKpeHhI5OZvYn82kXOs1bC8aOXktGU5AmKAgaZS4F5JPburCtbmDPqE7Pzp+1kN4+Wb81LlF33VpGwWwtXem+w==}
+    peerDependencies:
+      react: '>= 16.3'
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-draggable: 4.4.5(react-dom@18.2.0)(react@18.2.0)
+    transitivePeerDependencies:
+      - react-dom
     dev: false
 
   /react-router-dom@6.14.2(react-dom@18.2.0)(react@18.2.0):
@@ -3312,6 +3397,10 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /size-sensor@1.0.1:
+    resolution: {integrity: sha512-QTy7MnuugCFXIedXRpUSk9gUnyNiaxIdxGfUjr8xxXOqIB3QvBUYP9+b51oCg2C4dnhaeNk/h57TxjbvoJrJUA==}
+    dev: false
+
   /slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
@@ -3473,6 +3562,10 @@ packages:
       typescript: 5.0.2
     dev: true
 
+  /tslib@2.3.0:
+    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
+    dev: false
+
   /tslib@2.6.1:
     resolution: {integrity: sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig==}
 
@@ -3627,6 +3720,12 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zrender@5.4.4:
+    resolution: {integrity: sha512-0VxCNJ7AGOMCWeHVyTrGzUgrK4asT4ml9PEkeGirAkKNYXYzoPJCLvmyfdoOXcjTHPs10OZVMfD1Rwg16AZyYw==}
+    dependencies:
+      tslib: 2.3.0
+    dev: false
 
 settings:
   autoInstallPeers: true

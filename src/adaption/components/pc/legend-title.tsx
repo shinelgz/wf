@@ -1,5 +1,5 @@
 
-import { moreProps } from "../../type";
+import {moreProps } from "../../type";
 import { IconRightOutline } from "@ssc-ui-icons/icons-react";
 import "./legend-title.less"
 

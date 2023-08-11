@@ -1,29 +1,29 @@
 import react from '@vitejs/plugin-react-swc'
 import path from 'path';
-import {visualizer} from 'rollup-plugin-visualizer';
+import { visualizer } from 'rollup-plugin-visualizer';
 import { UserConfig } from 'vite';
 
 // https://vitejs.dev/config/
 
-const componentAdaption = 'adaption/adaptor-';
+const adaption = 'adaption/adaptor-';
 
 export enum RunMode {
   h5 = 'h5',
   pc = 'pc'
 }
 
-export function getAdaptionList(mode: RunMode){
+export function getAdaptionList(mode: RunMode) {
   return {
-      '@adaption-adaptor' : resolvePath( componentAdaption +  mode),
-      '@adaption-handlers': resolvePath( componentAdaption +  mode)
+    '@adaption-adaptor': resolvePath(adaption + mode),
+    '@adaption-handlers': resolvePath(adaption + mode)
   }
 }
 
-export function getEntryJs(mode: RunMode){
+export function getEntryJs(mode: RunMode) {
   return resolvePath(`main-${mode}.tsx`);
 }
 
-function resolvePath( filePath: string){
+function resolvePath(filePath: string) {
   return path.resolve(__dirname, `src/${filePath}`);
 }
 
@@ -35,30 +35,31 @@ const pcComponent = 'src/adaption/adaptor-pc';
  * @param code 
  * @returns 
  */
-const transformJSEntry = (mode: RunMode, code: string)  => {
+const transformJSEntry = (mode: RunMode, code: string) => {
   let path = getEntryJs(mode);
   return code
-  .replace(/\$___MAIN_JS_ENTRY__/g, `<script type="module" src="${path}"></script>`)
-  .replace(/\$__PRO_RUN_MODE__/g, mode)
-  
+    .replace(/\$___MAIN_JS_ENTRY__/g, `<script type="module" src="${path}"></script>`)
+    .replace(/\$__PRO_RUN_MODE__/g, mode)
+
 }
 
-export default (opt: unknown):UserConfig => {
+export default (opt: unknown): UserConfig => {
   console.info(opt);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { mode } = opt as { mode : RunMode};
+  const { mode } = opt as { mode: RunMode };
   // const isH5 = mode === 'h5';
   // const component = isH5 ? h5Component : pcComponent;
 
-  console.info(mode, {...getAdaptionList(mode)});
+  console.info(mode, { ...getAdaptionList(mode) });
 
-  const config : UserConfig =   {
+  const config: UserConfig = {
     resolve: {
       alias: {
-           ...getAdaptionList(mode),
-         // '@adaption-adaptor': path.resolve(__dirname, component),
-         // '@adaption-handlers': path.resolve(__dirname, component),
-          '~antd-mobile': path.resolve(__dirname,'node_modules/antd-mobile')
+        ...getAdaptionList(mode),
+        // '@adaption-adaptor': path.resolve(__dirname, component),
+        // '@adaption-handlers': path.resolve(__dirname, component),
+        '~antd-mobile': path.resolve(__dirname, 'node_modules/antd-mobile'),
+        '~ssc-ui-react': path.resolve(__dirname, 'node_modules/ssc-ui-react'),
       }
     },
     plugins: [
@@ -68,19 +69,19 @@ export default (opt: unknown):UserConfig => {
         enforce: 'pre',
         transformIndexHtml(code) {
           // for dev runtime to replace the entry script flag
-          return  transformJSEntry(mode, code)
+          return transformJSEntry(mode, code)
         },
       },
       {
         name: 'the resource file using',
         enforce: 'pre',
-        transform(code: string, id:string){
-          if(id.indexOf('/src/') > -1 || id.endsWith('.html')){
-             console.info('应用资源引用路径：',id);
+        transform(code: string, id: string) {
+          if (id.indexOf('/src/') > -1 || id.endsWith('.html')) {
+            console.info('应用资源引用路径：', id);
           }
           // for building the chunk to replace the entry script flag
-          if(id.endsWith('.html')){
-            return {code : transformJSEntry(mode, code), map: null}
+          if (id.endsWith('.html')) {
+            return { code: transformJSEntry(mode, code), map: null }
           }
         }
       },
@@ -90,13 +91,13 @@ export default (opt: unknown):UserConfig => {
         // open: true
       })
     ],
-    base : './',
+    base: './',
     build: {
-      outDir : 'dist/' + mode,
-      rollupOptions : {
+      outDir: 'dist/' + mode,
+      rollupOptions: {
         output: {
           assetFileNames() {
-            return `assets/[name].[hash].[ext]`;  
+            return `assets/[name].[hash].[ext]`;
           },
           entryFileNames: `assets/[name].[hash].js`,
         },
@@ -104,16 +105,16 @@ export default (opt: unknown):UserConfig => {
     },
     css: {
       preprocessorOptions: {
-        less:{
+        less: {
           math: 'always'
         }
       }
     },
-    server:{
+    server: {
       // 多模式同时运行化，固定端口
       port: mode === RunMode.h5 ? 5174 : 5173
     }
-    
+
   }
 
   // console.info('vite-config', config);       

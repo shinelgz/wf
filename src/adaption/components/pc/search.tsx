@@ -1,7 +1,7 @@
 import  { useState } from 'react';
 import { DownOutlined } from '@ant-design/icons';
 import { Button, Input,Col, Form, DatePicker,Switch, Row, Space, theme } from 'antd';
-import type { SearchProps } from '../type';
+import type { SearchProps } from '../../type';
 
 const  {TextArea} = Input;
 

@@ -6,6 +6,6 @@ export interface SearchProps {
 
 export interface moreProps {
         position: 'top' | 'bottom',
-        onclick? : MouseEventHandler<HTMLAnchorElement>
+        onclick? : MouseEventHandler<HTMLElement>
         text?: string,
 }

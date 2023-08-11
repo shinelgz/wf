@@ -2,10 +2,11 @@ import List from '../../../pages/list';
 import {Modal} from 'ssc-ui-react';
 
 
-export function viewMoreHandler( props? : any) {
+export function viewMoreHandler( _props? : any) {
 
     const inst = Modal.success({
-        title: 'Info',
+        title: false,
+        icon: false,
         width: 800,
         content: <List />,
         onOk : () => {

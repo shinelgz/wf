@@ -1,6 +1,6 @@
 
 import { RightOutline } from "antd-mobile-icons";
-import { moreProps } from "../type";
+import { moreProps } from "../../type";
 import "./legend-title.less"
 import { Button } from "ssc-mobile-ui-react";
 
