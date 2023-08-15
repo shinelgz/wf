@@ -1,5 +1,5 @@
-import {NavBar} from '@adaption-adaptor';
 import { NavBarProps } from 'ssc-mobile-ui-react';
+import {NavBar} from '@isolate/components';
 
 function NavBarView({style, children, ...navBarProps}: { style?: Record<string,string>, children: React.ReactNode, navBarProps?: NavBarProps}){
     return (

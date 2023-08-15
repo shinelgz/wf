@@ -5,7 +5,7 @@ import { UserConfig } from 'vite';
 
 // https://vitejs.dev/config/
 
-const adaption = 'adaption/adaptor-';
+const isolate = 'isolate/';
 
 export enum RunMode {
   h5 = 'h5',
@@ -14,8 +14,8 @@ export enum RunMode {
 
 export function getAdaptionList(mode: RunMode) {
   return {
-    '@adaption-adaptor': resolvePath(adaption + mode),
-    '@adaption-handlers': resolvePath(adaption + mode)
+    '@isolate/components': resolvePath(isolate + mode),
+    '@isolate/handlers': resolvePath(isolate + mode),
   }
 }
 
@@ -26,9 +26,6 @@ export function getEntryJs(mode: RunMode) {
 function resolvePath(filePath: string) {
   return path.resolve(__dirname, `src/${filePath}`);
 }
-
-const h5Component = 'src/adaption/adaptor-h5';
-const pcComponent = 'src/adaption/adaptor-pc';
 /**
  * 可以转换构建时的路径引用
  * @param mode 
@@ -47,8 +44,6 @@ export default (opt: unknown): UserConfig => {
   console.info(opt);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { mode } = opt as { mode: RunMode };
-  // const isH5 = mode === 'h5';
-  // const component = isH5 ? h5Component : pcComponent;
 
   console.info(mode, { ...getAdaptionList(mode) });
 
@@ -56,8 +51,6 @@ export default (opt: unknown): UserConfig => {
     resolve: {
       alias: {
         ...getAdaptionList(mode),
-        // '@adaption-adaptor': path.resolve(__dirname, component),
-        // '@adaption-handlers': path.resolve(__dirname, component),
         '~antd-mobile': path.resolve(__dirname, 'node_modules/antd-mobile'),
         '~ssc-ui-react': path.resolve(__dirname, 'node_modules/ssc-ui-react'),
       }

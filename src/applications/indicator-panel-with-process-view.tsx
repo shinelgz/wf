@@ -1,6 +1,5 @@
 
-import {IndicatorsPanel} from '@adaption-adaptor';
-import { Progress } from '@adaption-adaptor';
+import {IndicatorsPanel, Progress} from '@isolate/components';
 
 function IndicatorsPanelWithProcessView({value:{order, process,preOrder,todayOrder=0}, title,tooltip,}:{value:{order:number, process: number,preOrder:number,todayOrder?:number},title:string, tooltip?:string}){
     return (

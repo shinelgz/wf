@@ -1,7 +1,8 @@
 
-import {moreProps } from "../../type";
-import { IconRightOutline } from "@ssc-ui-icons/icons-react";
+import { RightOutline } from "antd-mobile-icons";
+import { moreProps } from "../../../type";
 import "./legend-title.less"
+import { Button } from "ssc-mobile-ui-react";
 
 function LegendTitle({title, more}:{title:string, more?: moreProps}){
     return (
@@ -11,7 +12,7 @@ function LegendTitle({title, more}:{title:string, more?: moreProps}){
                 <span>{title}</span>
             </div>
             <div>
-                { more ? <IconRightOutline onClick={more.onclick} style={{marginRight: '10px'}}></IconRightOutline> : null }
+                { more ? <Button onClick={more.onclick} style={{border: 0}}><RightOutline /></Button> : null }
             </div>
         </div>
     )

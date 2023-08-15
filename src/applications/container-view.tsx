@@ -1,3 +1,3 @@
-import { Container } from "@adaption-adaptor";
+import { Container } from '@isolate/components';
 
 export default Container;

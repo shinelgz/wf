@@ -1,4 +1,4 @@
-import {LegendTitle,Container, moreProps} from '@adaption-adaptor';
+import {LegendTitle,Container, moreProps} from '@isolate/components';
 
 interface props {
     title? : string, 

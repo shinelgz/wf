@@ -1,5 +1,5 @@
-import { baseui } from "@adaption-adaptor";
+import { baseui } from '@isolate/components';
 
-export * from "@adaption-handlers";
+export * from "@isolate/handlers";
 
 export const {Button,Form, TimePicker,DatePicker} = baseui

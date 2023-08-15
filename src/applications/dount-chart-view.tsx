@@ -1,4 +1,4 @@
-import { DountChart } from "@adaption-adaptor";
+import { DountChart } from '@isolate/components';
 
 
 const DountChartView:React.FC = (props) => {
