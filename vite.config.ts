@@ -12,7 +12,7 @@ export enum RunMode {
 // 隔离的目录
 const isolateList = ['components', 'handlers', 'routes', 'hooks'];
 
-export function getIsolateList(mode: RunMode) {
+export function resolveIsolateList(mode: RunMode) {
   const aliasMap = {};
   isolateList.forEach(type => aliasMap[`@isolate/${type}`] = resolvePath(`isolate/${type}/${mode}`))
   return aliasMap;
@@ -48,7 +48,7 @@ export default (opt: unknown): UserConfig => {
   const config: UserConfig = {
     resolve: {
       alias: {
-        ...getIsolateList(mode),
+        ...resolveIsolateList(mode),
         '~antd-mobile': path.resolve(__dirname, 'node_modules/antd-mobile'),
         '~ssc-ui-react': path.resolve(__dirname, 'node_modules/ssc-ui-react'),
       }
