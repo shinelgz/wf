@@ -1,5 +1,5 @@
 
-import {Table } from '@isolate/components';
+import {Table } from '@adapter/components';
 
 function TableView(){
 

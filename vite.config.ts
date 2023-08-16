@@ -14,7 +14,7 @@ const isolateList = ['components', 'handlers', 'routes', 'hooks'];
 
 export function resolveIsolateList(mode: RunMode) {
   const aliasMap = {};
-  isolateList.forEach(type => aliasMap[`@isolate/${type}`] = resolvePath(`isolate/${type}/${mode}`))
+  isolateList.forEach(type => aliasMap[`@adapter/${type}`] = resolvePath(`isolate/${type}/${mode}`))
   return aliasMap;
 
 }

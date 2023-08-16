@@ -22,10 +22,10 @@
     "types": ["vite/client"],
     "baseUrl": "./",
     "paths": {
-      "@isolate/handlers": ["src/isolate/handlers/pc"],
-      "@isolate/components": ["src/isolate/components/pc"],
-      "@isolate/routes": ["src/isolate/routes/pc"],
-      "@isolate/hooks": ["src/isolate/hooks/pc"],
+      "@adapter/handlers": ["src/isolate/handlers/pc"],
+      "@adapter/components": ["src/isolate/components/pc"],
+      "@adapter/routes": ["src/isolate/routes/pc"],
+      "@adapter/hooks": ["src/isolate/hooks/pc"],
       "~antd-mobile": ["node_modules/antd-mobile"],
     }
   },

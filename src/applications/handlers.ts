@@ -1,1 +1,1 @@
-export * from "@isolate/handlers";
+export * from "@adapter/handlers";

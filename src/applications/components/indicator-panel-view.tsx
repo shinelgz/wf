@@ -1,4 +1,4 @@
-import {IndicatorsPanel} from '@isolate/components';
+import {IndicatorsPanel} from '@adapter/components';
 
 
 function IndicatorsPanelView({title}:{title:string}){

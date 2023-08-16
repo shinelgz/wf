@@ -1,1 +1,1 @@
-export *  from '@isolate/components';
+export *  from '@adapter/components';

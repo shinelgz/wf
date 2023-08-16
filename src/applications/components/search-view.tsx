@@ -1,5 +1,5 @@
 
-import {Search} from '@isolate/components';
+import {Search} from '@adapter/components';
 
 function SearchView(){
   return (<>

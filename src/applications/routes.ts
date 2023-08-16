@@ -1,1 +1,1 @@
-export * from "@isolate/routes";
+export * from "@adapter/routes";
