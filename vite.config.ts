@@ -5,18 +5,18 @@ import { UserConfig } from 'vite';
 
 // https://vitejs.dev/config/
 
-const isolate = 'isolate/';
-
 export enum RunMode {
   h5 = 'h5',
   pc = 'pc'
 }
+// 隔离的目录
+const isolateList = ['components', 'handlers', 'routes', 'hooks'];
 
-export function getAdaptionList(mode: RunMode) {
-  return {
-    '@isolate/components': resolvePath(isolate + mode),
-    '@isolate/handlers': resolvePath(isolate + mode),
-  }
+export function getIsolateList(mode: RunMode) {
+  const aliasMap = {};
+  isolateList.forEach(type => aliasMap[`@isolate/${type}`] = resolvePath(`isolate/${type}/${mode}`))
+  return aliasMap;
+
 }
 
 export function getEntryJs(mode: RunMode) {
@@ -35,37 +35,33 @@ function resolvePath(filePath: string) {
 const transformJSEntry = (mode: RunMode, code: string) => {
   let path = getEntryJs(mode);
   return code
-    .replace(/\$___MAIN_JS_ENTRY__/g, `<script type="module" src="${path}"></script>`)
+    .replace(/\$___MAIN_JS_ENTRY__/g, path)
     .replace(/\$__PRO_RUN_MODE__/g, mode)
 
 }
 
 export default (opt: unknown): UserConfig => {
   console.info(opt);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { mode } = opt as { mode: RunMode };
 
-  console.info(mode, { ...getAdaptionList(mode) });
+  const { mode } = opt as { mode: RunMode };
 
   const config: UserConfig = {
     resolve: {
       alias: {
-        ...getAdaptionList(mode),
+        ...getIsolateList(mode),
         '~antd-mobile': path.resolve(__dirname, 'node_modules/antd-mobile'),
         '~ssc-ui-react': path.resolve(__dirname, 'node_modules/ssc-ui-react'),
       }
     },
     plugins: [
-      react(),
-      {
+      react(), {
         name: 'html-transform',
         enforce: 'pre',
         transformIndexHtml(code) {
           // for dev runtime to replace the entry script flag
           return transformJSEntry(mode, code)
         },
-      },
-      {
+      }, {
         name: 'the resource file using',
         enforce: 'pre',
         transform(code: string, id: string) {

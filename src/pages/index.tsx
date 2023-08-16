@@ -1,23 +1,25 @@
 import { useContext, useEffect, useState } from 'react';
 import PlatFormContext from '../utils/Context';
 import { PlatForm } from '../utils/const';
-import IndicatorsPanelView  from '../applications/indicator-panel-view';
-import IndicatorsPanelWithProcessView from '../applications/indicator-panel-with-process-view';
-import NavBarView from '../applications/navbar-view';
-import SearchView from '../applications/search-view';
-import { CardContainerView}  from '../applications/card-container-view';
-import  { handlers } from '../applications'
+import IndicatorsPanelView  from '../applications/components/indicator-panel-view';
+import IndicatorsPanelWithProcessView from '../applications/components/indicator-panel-with-process-view';
+import NavBarView from '../applications/components/navbar-view';
+import SearchView from '../applications/components/search-view';
+import { CardContainerView}  from '../applications/components/card-container-view';
+import  { viewMoreHandler } from '../applications/handlers'
 import { useNavigate } from 'react-router-dom';
 import { IndicatorResponse, getIndicatorData } from '../service/api';
-import DountChartView from '../applications/dount-chart-view';
+import DountChartView from '../applications/components/dount-chart-view';
+
+
 export default function Home() {
 
-  const { viewMoreHandler, myAlert } = handlers;
   const {platform} = useContext(PlatFormContext)
 
   const [data, setData] = useState<IndicatorResponse>({order: 0, process: 0, preOrder: 0,todayOrder: 0});
 
   const navigate = useNavigate();
+  
   useEffect(() => {
     getIndicatorData().then(res => setData(res));
   }, [])
@@ -41,7 +43,6 @@ export default function Home() {
     </CardContainerView>
     <CardContainerView title='Chart View'>
         <DountChartView />
-        <div onClick={() => myAlert()}>click me</div>
     </CardContainerView>
   </div>
   )

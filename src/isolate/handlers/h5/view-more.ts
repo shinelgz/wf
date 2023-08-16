@@ -1,5 +1,5 @@
-import { NavigateFunction,  } from 'react-router-dom'
+import { NavigateFunction, } from 'react-router-dom'
 
-export function viewMoreHandler(navigate:NavigateFunction) {
+export function viewMoreHandler(navigate: NavigateFunction) {
     navigate('/list');
 }

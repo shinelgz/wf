@@ -9,7 +9,7 @@ function IndicatorsPanelWithProcessView({value:{order, process,preOrder,todayOrd
               <>
               <div className='progress-content'>
                 <div className="progress-title">{title}</div>
-                <div style={{display:"flex"}}>
+                <div style={{display:"flex", alignItems:'center'}}>
                     <div className="progress-text">
                         <span>{process}</span> <span style={{"marginLeft": "4px", "fontSize": "16px" ,"fontWeight": "normal"}}>%</span>
                     </div>

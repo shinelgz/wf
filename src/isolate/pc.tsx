@@ -1,39 +1,35 @@
-import Search  from "./components/pc/search";
-import Table from './components/pc/table'
-import Stepper from './components/pc/stepper';
-import TextArea from './components/pc/textarea';
-import LegendTitle from "./components/pc/legend-title";
-import IndicatorsPanel from "./components/pc/indicators-panel";
-import Container from "./components/pc/container";
-import DountChart from "./components/pc/dount-chart";
-// eslint-disable-next-line react-refresh/only-export-components
-export * from './components/pc'
-import {baseui} from './components/pc';
+// /**
+//  * 仅负责导出组件
+//  */
+// import Search  from "./components/pc/search";
+// import Table from './components/pc/table'
+// import Stepper from './components/pc/stepper';
+// import TextArea from './components/pc/textarea';
+// import LegendTitle from "./components/pc/legend-title";
+// import IndicatorsPanel from "./components/pc/indicators-panel";
+// import Container from "./components/pc/container";
+// import DountChart from "./components/pc/dount-chart";
+// import { Layout } from './components/pc/layout';
 
-export type * from './type';
-export type * from "./components/pc/dount-chart";
+// import { baseui } from './components/pc';
 
-const { Progress, Button } = baseui;
-const NavBar = (options: Record<string, any>) => {
-  console.info(options);
-  return  <></>;
-};
+// export type * from './type';
 
-console.info('pc component adaptor');
+// export const { Progress, Button } = baseui;
 
-export  {
-  Search  ,
-  Table,
-  Stepper,
-  TextArea,
-  Button,
-  DountChart,
-  LegendTitle,IndicatorsPanel,
-  Progress, Container,
-  NavBar
-}
+// const NavBar = (options: Record<string, any>) => {
+//   console.info(options);
+//   return  <></>;
+// };
 
-
-import * as handlersForPC from './handlers/pc'
-import * as handlersForAll from './handlers'
-export const handlers = { ...handlersForAll, ...handlersForPC};
+// export  {
+//   Search  ,
+//   Table,
+//   Stepper,
+//   TextArea,
+//   DountChart,
+//   Layout,
+//   LegendTitle,IndicatorsPanel,
+//   Container,
+//   NavBar
+// }

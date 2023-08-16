@@ -1,5 +1,5 @@
-import NavBarView from "../applications/navbar-view";
-import TableView from "../applications/table-view";
+import NavBarView from "../applications/components/navbar-view";
+import TableView from "../applications/components/table-view";
 
 export default function List(){
     return (

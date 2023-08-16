@@ -9,3 +9,7 @@ export interface moreProps {
         onclick? : MouseEventHandler<HTMLElement>
         text?: string,
 }
+
+export interface LayoutProps {
+    children: React.ReactNode;
+  }

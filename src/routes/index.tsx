@@ -1,11 +1,10 @@
 
 import {RouteObject} from  'react-router-dom';
-
 import { Suspense, lazy } from 'react';
+import { subRoutes }  from '../applications/routes'
 
 const Home = lazy( () => import('../pages'));
 const List = lazy( () => import('../pages/list'))
-
 
 export const routes: RouteObject[] = [{
     path: '/',
@@ -16,4 +15,4 @@ export const routes: RouteObject[] = [{
 },{
     path: '/list',
     element: <Suspense fallback={'loading...'}><List /></Suspense>
-}]
+}, ...subRoutes]
