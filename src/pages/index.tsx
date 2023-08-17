@@ -9,12 +9,16 @@ import { useNavigate } from 'react-router-dom';
 import { IndicatorResponse, getIndicatorData } from '../service/api';
 import DountChartView from '../applications/components/dount-chart-view';
 import List from './list';
+import TableView from '../applications/components/table-view';
+import { useOtherIndicatorTableOptions } from '../hooks/useOtherIndicatorTableOptions';
 
 
 export default function Home() {
 
 
   const [data, setData] = useState<IndicatorResponse>({order: 0, process: 0, preOrder: 0,todayOrder: 0});
+
+  const { columns, dataSource } = useOtherIndicatorTableOptions();
 
   const navigate = useNavigate();
   
@@ -41,6 +45,9 @@ export default function Home() {
     </CardContainerView>
     <CardContainerView title='Chart View'>
         <DountChartView />
+    </CardContainerView>
+    <CardContainerView title="This Is A Table">
+      <TableView {...{dataSource, columns}}></TableView>
     </CardContainerView>
   </>
   )

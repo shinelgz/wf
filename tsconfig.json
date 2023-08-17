@@ -26,6 +26,7 @@
       "@adapter/components": ["src/isolate/components/pc"],
       "@adapter/routes": ["src/isolate/routes/pc"],
       "@adapter/hooks": ["src/isolate/hooks/pc"],
+      "@adapter/rules": ["src/isolate/rules/pc"],
       "~antd-mobile": ["node_modules/antd-mobile"],
     }
   },

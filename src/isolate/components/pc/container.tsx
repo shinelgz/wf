@@ -2,7 +2,7 @@
 
 function Container({children}:{children: React.ReactNode | React.ReactNode[]}){
     return (
-    <div className="overall-list" style={{display: 'flex', flexDirection: 'row'}}>
+    <div className="overall-list" style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
         {children}
     </div>
     )

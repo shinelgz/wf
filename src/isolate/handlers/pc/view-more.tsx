@@ -1,5 +1,5 @@
 import type { HandlerProps } from '../../type';
-import {Modal} from 'ssc-ui-react';
+import { Modal } from 'ssc-ui-react';
 
 
 export function viewMoreHandler( { Component }: HandlerProps) {

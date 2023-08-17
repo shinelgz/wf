@@ -10,7 +10,7 @@ export enum RunMode {
   pc = 'pc'
 }
 // 隔离的目录
-const isolateList = ['components', 'handlers', 'routes', 'hooks'];
+const isolateList = ['components', 'handlers', 'routes', 'hooks', 'rules'];
 
 export function resolveIsolateList(mode: RunMode) {
   const aliasMap = {};
