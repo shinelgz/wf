@@ -34,8 +34,9 @@ If you are developing a production application, we recommend updating the config
 解决这个问题，我们的目标就是一次研发能够适应两端的用户使用，这使得我们要做到：
 实现一套代码一次研发，够能适应两端的运行环境，一是从纵向上，组件（业务组件）能够复用，二是从横向上，组件的交互流程标准化。
 交互设计上要标准规范化，达得到两端的表现有，尽量减少各端的差异化。（设计样例）
-注：本文档主要对 第一个目标进行详述；原理来说，该方案适应了 N 库类集成。
-
+注：本文档主要对 第一个目标进行详述；原理来说，该方案适应了 N 库类集成
+研发模式的改变：
+![image](https://github.com/shinelgz/wf/blob/master/public/3.png)
 
 ## 方案实现
 ### 总体设计
