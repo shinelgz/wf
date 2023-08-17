@@ -1,6 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
-import PlatFormContext from '../utils/Context';
-import { PlatForm } from '../utils/const';
+import { useEffect, useState } from 'react';
 import IndicatorsPanelView  from '../applications/components/indicator-panel-view';
 import IndicatorsPanelWithProcessView from '../applications/components/indicator-panel-with-process-view';
 import NavBarView from '../applications/components/navbar-view';
@@ -10,11 +8,11 @@ import  { viewMoreHandler } from '../applications/handlers'
 import { useNavigate } from 'react-router-dom';
 import { IndicatorResponse, getIndicatorData } from '../service/api';
 import DountChartView from '../applications/components/dount-chart-view';
+import List from './list';
 
 
 export default function Home() {
 
-  const {platform} = useContext(PlatFormContext)
 
   const [data, setData] = useState<IndicatorResponse>({order: 0, process: 0, preOrder: 0,todayOrder: 0});
 
@@ -25,12 +23,12 @@ export default function Home() {
   }, [])
 
   return (
-  <div style={{ minWidth: platform == PlatForm.PC ? "1000px" : 'auto'}} className="delivery-dashboard-wrapper">
+  <>
     <NavBarView navBarProps={{backArrow:false}}>Operation</NavBarView>
     <div className="container-wrapper">
       <SearchView />
     </div>
-    <CardContainerView title='Overall' more={{position:'top', onclick: () => {viewMoreHandler(navigate)}}}>
+    <CardContainerView title='Overall' more={{position:'top', onclick: () => {viewMoreHandler({navigate, Component: List, componentPath : '/list'})}}}>
         <IndicatorsPanelView title="Total Inbounded" />
         <IndicatorsPanelView title="Total Delivered" />
         <IndicatorsPanelView title="Total On-hand" />
@@ -44,6 +42,6 @@ export default function Home() {
     <CardContainerView title='Chart View'>
         <DountChartView />
     </CardContainerView>
-  </div>
+  </>
   )
 }

@@ -1,4 +1,5 @@
 import { MouseEventHandler } from "react";
+import { NavigateFunction } from "react-router-dom";
 
 export interface SearchProps {
     onSearch: () => void;
@@ -12,4 +13,10 @@ export interface moreProps {
 
 export interface LayoutProps {
     children: React.ReactNode;
-  }
+}
+
+export interface HandlerProps {
+    navigate? : NavigateFunction;
+    componentPath? : string,
+    Component? : () => JSX.Element;
+}

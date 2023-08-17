@@ -1,5 +1,5 @@
-import { NavigateFunction, } from 'react-router-dom'
+import type { HandlerProps } from '../../type';
 
-export function viewMoreHandler(navigate: NavigateFunction) {
-    navigate('/list');
+export function viewMoreHandler({ navigate, componentPath }: HandlerProps) {
+    navigate!(componentPath!);
 }
