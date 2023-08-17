@@ -24,7 +24,7 @@ const AdvancedSearchForm = ({onSearch}:SearchProps) => {
         <Col>
           <Form.Item
             name='name'
-            label='姓名1'
+            label='姓名'
             rules={[{ required: true, message: '姓名不能为空' }]}
           >
             <Input onChange={console.log} placeholder='请输入姓名' />
