@@ -6,11 +6,11 @@ import SearchView from '../applications/components/search-view';
 import { CardContainerView}  from '../applications/components/card-container-view';
 import  { viewMoreHandler } from '../applications/handlers'
 import { useNavigate } from 'react-router-dom';
-import { IndicatorResponse, getIndicatorData } from '../service/api';
+import { IndicatorResponse, getIndicatorData } from '../service/api/indicator';
 import DountChartView from '../applications/components/dount-chart-view';
 import List from './list';
 import TableView from '../applications/components/table-view';
-import { useOtherIndicatorTableOptions } from '../hooks/useOtherIndicatorTableOptions';
+import { useOtherIndicatorTableFactory } from '../service/useOtherIndicatorTableFactory';
 
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
 
   const [data, setData] = useState<IndicatorResponse>({order: 0, process: 0, preOrder: 0,todayOrder: 0});
 
-  const { columns, dataSource } = useOtherIndicatorTableOptions();
+  const { columns, dataSource } = useOtherIndicatorTableFactory();
 
   const navigate = useNavigate();
   

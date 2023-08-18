@@ -7,11 +7,16 @@ export interface IndicatorResponse {
 }
 
 export interface OtherIndicatorResponse {
-    id: number;
-    order_type: string;
-    order_name: string;
-    today_name: string;
-    last_name: string;
+    data: {
+        id: string;
+        order_type: string;
+        order_name: string;
+        today_name: string;
+        last_name: string;
+    }[]
+}
+function generateRandomNumber() {
+    return String(Math.floor(Math.random() * (90000000 - 10000000 + 1)) + 10000000);
 }
 
 function generateRandomCharacter() {
@@ -30,23 +35,24 @@ export function getIndicatorData(): Promise<IndicatorResponse> {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve({ order: 85, process: 93, preOrder: 56, todayOrder: 53 });
-        }, Math.random() * 5000);
+        }, Math.random() * 500);
     })
 }
 
 
-export function getOtherIndicatorData(): Promise<OtherIndicatorResponse[]> {
+export function getOtherIndicatorData(): Promise<OtherIndicatorResponse> {
     const res = new Array(10).fill(0);
     return new Promise((resolve) => {
         setTimeout(() => {
-            const data = res.map((_, index) => ({
-                id: index + 1,
+            const data = res.map(() => ({
+                id: generateRandomNumber(),
+                key: generateRandomNumber(),
                 order_type: generateRandomCharacter(),
                 order_name: generateRandomCharacter(),
                 today_name: generateRandomCharacter(),
                 last_name: generateRandomCharacter()
             }));
-            resolve(data);
-        }, Math.random() * 5000);
+            resolve({ data });
+        }, Math.random() * 500);
     })
 }

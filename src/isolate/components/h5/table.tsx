@@ -44,7 +44,7 @@ import { AntOutline } from 'antd-mobile-icons'
           title={
             <div style={{ fontWeight: 'normal' }}>
               <AntOutline style={{ marginRight: '4px', color: '#1677ff' }} />
-              {item[keys[0]]} 
+              {item[keys[0]] ?? '-'} 
             </div>
           }
           extra={ <Button onClick={() => {
