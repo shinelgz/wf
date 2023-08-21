@@ -1,4 +1,5 @@
 import react from '@vitejs/plugin-react-swc'
+import { hostname } from 'os';
 import path from 'path';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { UserConfig } from 'vite';
@@ -101,7 +102,8 @@ export default (opt: unknown): UserConfig => {
     },
     server: {
       // 多模式同时运行化，固定端口
-      port: mode === RunMode.h5 ? 5174 : 5173
+      port: mode === RunMode.h5 ? 5174 : 5173,
+      host: true
     }
 
   }

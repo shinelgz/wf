@@ -11,11 +11,9 @@ import context from '../utils/Context'
 
 export default function List(){
 
-    let { columns, dataSource } = useOtherIndicatorTableFactory();
-    let cxt = useContext(context);
-
-    const navigate = cxt.navigate;
-    let { result } = useStateFactory<boolean, ShowSearchOnListRules>({data: false, rules: showSearchOnListRules})
+    const { columns, dataSource } = useOtherIndicatorTableFactory();
+    const { navigate } = useContext(context);
+    const { result } = useStateFactory<boolean, ShowSearchOnListRules>({data: false, rules: showSearchOnListRules})
 
     const right: WebviewProps['right'] = [{
         id: 'search',

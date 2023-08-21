@@ -15,14 +15,11 @@ import ThisIsATable from './components/home/this-is-a-table';
 import Webview from '../applications/components/webview';
 
 export default function Home() {
-  
-  const [data, setData] = useState<IndicatorResponse>({order: 0, process: 0, preOrder: 0,todayOrder: 0});
+
   const { result: renderInbounded } = useStateFactory<boolean, KeyStateRenderRules>({data: false, rules: keyStateRenderRules});
+  const { result: data } = useStateFactory<IndicatorResponse>({loader: getIndicatorData});
   const navigate = useNavigate();
   
-  useEffect(() => {
-    getIndicatorData().then(res => setData(res));
-  }, [])
 
   return (
   <>
@@ -37,7 +34,7 @@ export default function Home() {
           <IndicatorsPanelView title="To Inbound" />
     </CardContainerView>
       <CardContainerView title='Delivery Progress' more={{position:'bottom', text: "view more info", onclick: () => {alert(1)}}}>
-          <IndicatorsPanelWithProcessView title="To Assign" value={data}/>
+          <IndicatorsPanelWithProcessView title="To Assign" value={data!}/>
           <IndicatorsPanelWithProcessView title="To Handover" value={{order:55, process: 97, preOrder: 56,todayOrder: 3}} tooltip="Parcels waiting to be handed over" />
           <IndicatorsPanelWithProcessView title="To Deliver" value={{order:125, process: 100, preOrder: 56,todayOrder: 213}}/>
       </CardContainerView>

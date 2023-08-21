@@ -1,8 +1,9 @@
 
 import {IndicatorsPanel, Progress} from '@adapter/components';
 
-function IndicatorsPanelWithProcessView({value:{order, process,preOrder,todayOrder=0}, title,tooltip,}:{value:{order:number, process: number,preOrder:number,todayOrder?:number},title:string, tooltip?:string}){
-    return (
+function IndicatorsPanelWithProcessView({value, title,tooltip,}:{value:{order:number, process: number,preOrder:number,todayOrder?:number},title:string, tooltip?:string}){ 
+  const {order = 0, process = 0,preOrder = 0,todayOrder = 0} = value ?? {};
+  return (
         <IndicatorsPanel title="To Assign" 
           tooltip={tooltip}
             footer={
