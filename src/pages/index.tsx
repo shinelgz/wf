@@ -1,7 +1,5 @@
-import { useEffect, useState } from 'react';
 import IndicatorsPanelView  from '../applications/components/indicator-panel-view';
 import IndicatorsPanelWithProcessView from '../applications/components/indicator-panel-with-process-view';
-import NavBarView from '../applications/components/navbar-view';
 import SearchView from '../applications/components/search-view';
 import { CardContainerView}  from '../applications/components/card-container-view';
 import { viewMoreHandler } from '../applications/handlers'
