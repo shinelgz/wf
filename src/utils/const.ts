@@ -1,4 +1,8 @@
 export enum PlatForm {
   H5 = 'h5',
-  PC  = 'pc'
+  PC = 'pc'
+}
+
+export function getRegion() {
+  return 'th';
 }

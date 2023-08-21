@@ -1,14 +1,14 @@
 import { getOtherIndicatorData as loader, OtherIndicatorResponse } from "./api/indicator";
 import { otherIndicatorDataRules, OtherIndicatorDataRules } from '../applications/rules'
-import { useDataFactory } from "../hooks/use-data-factory";
+import { useStateFactory } from "../hooks/use-state-factory";
 
 export function useOtherIndicatorTableFactory() {
 
-    const { dataSource, table } = useDataFactory<OtherIndicatorResponse, OtherIndicatorDataRules>({ loader, rules: otherIndicatorDataRules });
+    const { result, table } = useStateFactory<OtherIndicatorResponse, OtherIndicatorDataRules>({ loader, rules: otherIndicatorDataRules });
     const { columns } = table();
 
     return {
         columns,
-        dataSource
+        dataSource: result?.data ?? []
     }
 }

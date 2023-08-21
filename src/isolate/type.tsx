@@ -20,3 +20,13 @@ export interface HandlerProps {
     componentPath? : string,
     Component? : () => JSX.Element;
 }
+
+export interface WebviewProps {
+    title?: string;
+    children?: React.ReactNode | React.ReactNode[];
+    backArrow?: boolean;
+    right?: {
+        id: 'search'| 'more';
+        onClick: () => void;
+    }[];
+}

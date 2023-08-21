@@ -14,6 +14,7 @@ import IndicatorsPanel from "./indicators-panel";
 import Container from "./container";
 import DountChart from "./dount-chart";
 import { Layout } from './layout';
+import Webview from './webview';
 
 export type * from '../../type';
 
@@ -30,6 +31,7 @@ export  {
   Stepper,
   TextArea,
   DountChart,
+  Webview,
   Layout,
   LegendTitle,IndicatorsPanel,
   Container,

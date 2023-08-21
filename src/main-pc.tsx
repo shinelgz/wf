@@ -8,7 +8,7 @@ import PlatFormContext from './utils/Context'
 console.info('pc');
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <PlatFormContext.Provider value={{platform: 'pc'}}>
+    <PlatFormContext.Provider value={{platform: 'pc', region: 'th'}}>
       <App />
     </PlatFormContext.Provider>
   </React.StrictMode>,

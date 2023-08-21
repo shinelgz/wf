@@ -10,6 +10,7 @@ import Container from "./container";
 import NavBar from "./navbar";
 import DountChart from "./dount-chart";
 import {Layout} from "./layout";
+import Webview from './webview';
 
 export {ProgressBar as Progress, Button, Modal} from 'ssc-mobile-ui-react';
 
@@ -19,6 +20,7 @@ export {
   Search ,
   Table,
   DountChart,
+  Webview,
   Layout,
   Stepper, LegendTitle, IndicatorsPanel ,Container,NavBar
 }

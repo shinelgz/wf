@@ -8,7 +8,7 @@ import PlatFormContext from './utils/Context'
 console.info('h5');
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <PlatFormContext.Provider value={{platform: 'h5'}}>
+    <PlatFormContext.Provider value={{platform: 'h5', region: 'th'}}>
       <App />
     </PlatFormContext.Provider>
   </React.StrictMode>,
