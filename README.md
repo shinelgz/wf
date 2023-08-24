@@ -26,8 +26,28 @@ If you are developing a production application, we recommend updating the config
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
-
-
+============
+## 目录结构
+```
+├── App.tsx
+├── applications  // 业务逻辑层，向下兼容
+│   ├── components
+│   ├── handlers
+│   ├── routes
+│   └── rules
+├── assets
+├── config
+├── hooks  
+├── isolate // 端侧隔离层，仅由 applications层调用
+│   ├── components // 组件
+│   ├── handlers // 事件
+│   ├── routes // 路由
+│   └── rules // 状态规则
+├── pages
+├── routes
+├── service // 接口
+└── utils
+```
 ============
 
 ## 目标
@@ -110,4 +130,3 @@ pnpm run build:pc
 对比分别针对两个端侧分别开发的方案，
 该方案在前期（差异化沉淀不充足的情况下），工作量会比分别开发双端大，因为需要做差异化的抽像，但比一套代码兼容双端的工作量小，因为代码逻辑没有一套代码的复杂（物理隔离代替了逻辑中的隔离）。
 在差异化沉淀充足的情况下，后期的研发效率应该会极大提高，主要利益于代码和组件的复杂，接口无差别复用等因素。
-

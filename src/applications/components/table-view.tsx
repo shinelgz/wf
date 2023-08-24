@@ -1,5 +1,5 @@
 
-import {Table } from '@adapter/components';
+import { Table } from '@adapter/components';
 
 function TableView({columns, dataSource} : {columns : any[], dataSource: any[]}){
 

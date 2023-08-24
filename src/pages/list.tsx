@@ -1,7 +1,7 @@
 import { useOtherIndicatorTableFactory } from "../service/useOtherIndicatorTableFactory";
 import TableView from "../applications/components/table-view";
 import Webview from "../applications/components/webview";
-import { WebviewProps } from "../applications";
+import { WebviewProps } from "../applications/components";
 import {onListSearchHandler} from '../applications/handlers';
 import SearchView from "../applications/components/search-view";
 import { useStateFactory } from "../hooks/use-state-factory";

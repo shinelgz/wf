@@ -1,7 +1,7 @@
 
-import './indicators-panel.less';
+import './indicators-panel-h5.less';
 import { IconQuestionOutline } from "@ssc-ui-icons/icons-react";
-import {Popover} from "ssc-ui-react";
+import {Popover} from "ssc-mobile-ui-react";
 
 function IndicatorsPanel({title, footer, children, tooltip}:{title:string, footer: React.ReactNode, children: React.ReactNode,tooltip?:string}){
     return (
@@ -13,7 +13,7 @@ function IndicatorsPanel({title, footer, children, tooltip}:{title:string, foote
                     <span className="title">{title}</span> 
                     { tooltip ?
                     <div>
-                    <Popover placement="topCenter" title={tooltip}>
+                    <Popover placement="top" content={tooltip} trigger='click'>
                         <IconQuestionOutline />
                     </Popover>
                     </div>

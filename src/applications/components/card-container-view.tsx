@@ -1,4 +1,4 @@
-import {LegendTitle,Container, moreProps} from '@adapter/components';
+import {LegendTitle,Container, moreProps} from  '@adapter/components';
 
 interface props {
     title? : string, 

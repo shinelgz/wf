@@ -1,4 +1,4 @@
-import { WebviewProps } from "../../../isolate/type"
+import { WebviewProps } from "../../type"
 
 export default ({children} : WebviewProps) => {
     return <>{children}</>

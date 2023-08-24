@@ -1,3 +1,6 @@
+/**
+ * 保持各端接口的 Props 一致性
+ */
 import { MouseEventHandler } from "react";
 import { NavigateFunction } from "react-router-dom";
 

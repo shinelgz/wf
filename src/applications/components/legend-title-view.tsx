@@ -1,3 +1,3 @@
-import {LegendTitle} from '@adapter/components';
+import {LegendTitle} from  '@adapter/components';
 
 export default LegendTitle;

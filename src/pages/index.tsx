@@ -14,7 +14,9 @@ import Webview from '../applications/components/webview';
 
 export default function Home() {
 
+  // 是否渲染 inbounded 指标卡
   const { result: renderInbounded } = useStateFactory<boolean, KeyStateRenderRules>({data: false, rules: keyStateRenderRules});
+
   const { result: data } = useStateFactory<IndicatorResponse>({loader: getIndicatorData});
   const navigate = useNavigate();
   

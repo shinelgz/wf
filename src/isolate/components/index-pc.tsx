@@ -5,20 +5,23 @@
 // // eslint-disable-next-line react-refresh/only-export-components
 // export * from 'react-pro-components';
 
-import Search  from './search';
-import Table from './table'
-import Stepper from './stepper';
-import TextArea from './textarea';
-import LegendTitle from "./legend-title";
-import IndicatorsPanel from "./indicators-panel";
-import Container from "./container";
-import DountChart from "./dount-chart";
-import { Layout } from './layout';
-import Webview from './webview';
+import Search  from './search/index-pc';
+import Table from './table/index-pc'
+import Stepper from './stepper/index-pc';
+import LegendTitle from "./legend-title/index-pc";
+import IndicatorsPanel from "./indicators-panel/index-pc";
+import Container from "./container/index-pc";
+import DountChart from "./dount-chart/index-pc";
+import { Layout } from './layout/index-pc';
+import Webview from './webview/index-pc';
+import { Input } from 'antd';
 
-export type * from '../../type';
+
+export type * from '../type';
 
 export  { Progress, Button } from 'ssc-ui-react';
+
+const { TextArea } = Input;
 
 const NavBar = (options: Record<string, any>) => {
   console.info(options);

@@ -1,5 +1,5 @@
 
-import {IndicatorsPanel, Progress} from '@adapter/components';
+import {IndicatorsPanel, Progress} from  '@adapter/components';
 
 function IndicatorsPanelWithProcessView({value, title,tooltip,}:{value:{order:number, process: number,preOrder:number,todayOrder?:number},title:string, tooltip?:string}){ 
   const {order = 0, process = 0,preOrder = 0,todayOrder = 0} = value ?? {};

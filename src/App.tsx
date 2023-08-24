@@ -2,7 +2,7 @@
 import './assets/App.css'
 import {useRoutes, BrowserRouter} from 'react-router-dom';
 import {routes} from './routes'
-import { Layout} from './applications';
+import { Layout } from './applications/components';
 import { RouterListener } from './applications/components/router-listener';
 
 function App() {

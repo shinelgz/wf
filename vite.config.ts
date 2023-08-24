@@ -15,7 +15,10 @@ const isolateList = ['components', 'handlers', 'routes', 'hooks', 'rules'];
 
 export function resolveIsolateList(mode: RunMode) {
   const aliasMap = {};
-  isolateList.forEach(type => aliasMap[`@adapter/${type}`] = resolvePath(`isolate/${type}/${mode}`))
+
+  isolateList.forEach(type => {
+    aliasMap[`@adapter/${type}`] = resolvePath(`isolate/${type}/index-${mode}`)
+  })
   return aliasMap;
 
 }
@@ -56,6 +59,14 @@ export default (opt: unknown): UserConfig => {
     },
     plugins: [
       react(), {
+        name: 'aaaa',
+        enforce: 'pre',
+        resolveId(...args) {
+          if (args[0].indexOf('isolate') > 0)
+            console.info(2, args);
+
+        }
+      }, {
         name: 'html-transform',
         enforce: 'pre',
         transformIndexHtml(code) {

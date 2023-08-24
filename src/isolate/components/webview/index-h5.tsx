@@ -1,5 +1,5 @@
-import NavBar from "./navbar";
-import { WebviewProps } from "../../../isolate/type";
+import NavBar from "../navbar/index-h5";
+import { WebviewProps } from "../../type";
 import { Space } from "antd-mobile";
 import { SearchOutline } from "antd-mobile-icons";
 
